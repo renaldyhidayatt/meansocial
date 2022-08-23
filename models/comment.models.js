@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-
+const mongoose = require("mongoose");
 
 const commentSchema = new mongoose.Schema({
   commenter_id: {
@@ -8,10 +7,10 @@ const commentSchema = new mongoose.Schema({
   },
   comment_content: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
-mongoose.model("comment", commentSchema)
+const Comment = mongoose.model("comment", commentSchema);
 
-module.exports = commentSchema
+module.exports = Comment;

@@ -1,29 +1,29 @@
-const mongoose = require('mongoose')
-const { commentSchema } = require('./comment.models.js')
+const mongoose = require("mongoose");
+const { commentSchema } = require("./comment.models.js");
 
 const postSchema = new mongoose.Schema({
   content: {
     type: String,
-    required: true
+    required: true,
   },
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   theme: {
     type: String,
-    default: "primary"
+    default: "primary",
   },
   likes: {
     type: [String],
-    default: []
+    default: [],
   },
   comments: {
     type: [commentSchema],
-    default: []
-  }
-})
+    default: [],
+  },
+});
 
-mongoose.model("posts", postSchema)
+const Post = mongoose.model("posts", postSchema);
 
-module.exports = postSchema
+module.exports = Post;
